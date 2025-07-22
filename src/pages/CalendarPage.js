@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { Link } from 'react-router-dom';
 
 function getRandomColor(seed) {
   let hash = 0;
@@ -79,12 +78,6 @@ const CalendarPage = ({ tasks }) => {
     <div className="min-h-screen bg-white px-4 py-10">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-blue-600 text-center">Calendar</h1>
-        <Link
-          to="/"
-          className="rounded-md border-2 border-black w-[120px] h-[40px] flex items-center justify-center bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"
-        >
-          ToDo List
-        </Link>
       </div>
       <div className="w-full flex justify-center">
         <div className="w-full max-w-6xl">

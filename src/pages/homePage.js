@@ -42,6 +42,8 @@ const Homepage = ({ tasks, setTasks }) => {
     e.dataTransfer.setData('text/plain', JSON.stringify({ category, index }));
   };
 
+  const handleDragOver = (e) => e.preventDefault();
+
   const handleDrop = (e, targetCategory) => {
     e.preventDefault();
     const { category, index } = JSON.parse(e.dataTransfer.getData('text/plain'));
@@ -54,8 +56,6 @@ const Homepage = ({ tasks, setTasks }) => {
     });
   };
 
-  const handleDragOver = (e) => e.preventDefault();
-
   const columns = [
     { key: 'todo', label: 'TO DO' },
     { key: 'inProgress', label: 'IN PROGRESS' },
@@ -66,12 +66,6 @@ const Homepage = ({ tasks, setTasks }) => {
     <div className="min-h-screen bg-white px-4 py-10">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-blue-600">TO DO LIST</h1>
-        <button
-          onClick={() => navigate('/calendar')}
-          className="rounded-md border-2 border-black w-[120px] h-[40px] flex items-center justify-center bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"
-        >
-          Calendar
-        </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {columns.map(({ key, label }) => (
