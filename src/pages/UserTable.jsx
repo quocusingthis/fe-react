@@ -93,7 +93,7 @@ const UserTable = () => {
         <tbody>
           {users.length === 0 && (
             <tr>
-              <td colSpan={5} className="text-center py-2 text-gray-400">No users</td>
+              <td colSpan={5} className="border px-2 py-2 text-center text-gray-400">No users</td>
             </tr>
           )}
           {users.map((user, idx) => (
